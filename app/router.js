@@ -7,7 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-	this.route('todos', { path: '/' });
+    this.route('todos', { path: '/' }, function() {
+      this.route('complete');
+      this.route('incomplete');
+    });
 });
 
 export default Router;
