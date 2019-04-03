@@ -5,7 +5,7 @@ export default Ember.Route.extend({
         let todos = [
             {
                 title: "Learn Ember",
-                complete: false,
+                complete: true,
             },
             {
                 title: "Solve World Hunger",
