@@ -3,4 +3,5 @@ export default function() {
     this.post('/todos');
     this.patch('/todos/:id');
     this.del('/todos/:id');
+    this.get('/projects');
 }
