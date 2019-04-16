@@ -1,20 +1,13 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-	model(){
+	model() {
 		let projects = this.modelFor('projects');
-		return this.store.findAll('project');
-	}
-	/*model() {
-		let projects = this.modelFor('projects');
-		debugger;
-		return projects.filter((project) => {
-			return project.get(3);
-		})
+		return projects.filterBy('status',3);
 	},
 	renderTemplate(controller, model) {
-		this.render('project.done', {
+		this.render('projects.done', {
 			model: model
 		});
-	}*/
+	}
 });
