@@ -20,8 +20,6 @@ export default Component.extend({
 				});
 			}
 			this.set('title',"");
-
 		}
-
 	}
 });
