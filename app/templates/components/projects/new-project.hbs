@@ -1,5 +1,11 @@
 {{yield}}
-{{input type="text" name="title" value=title placeholder="What needs to be done?" enter=(action "submitProject")}}
+{{input type="text" name="title" value=newProject.title placeholder="What needs to be done?" enter=(action "submitProject")}}
+<p style="color: red;font-size: 10px;">
+{{#if invalidForm}}
+{{v-get newProject 'title' 'message'}}
+{{/if}}
+</p>
+
 <select onchange={{action "setProjectStatus" value="target.value"}}>
 	<option disabled selected> -- Status -- </option>
 	<option value=1>Yet to start</option>
