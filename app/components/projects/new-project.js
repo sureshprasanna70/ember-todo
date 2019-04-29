@@ -1,9 +1,11 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-    store: Ember.inject.service(),
-	setProjectStatus: "",
+	store: Ember.inject.service(),
 	setBA: "",
+	setProjectStatus: "",
+	formErrors: "",
+	invalidForm: false,
 	actions: {
 		setProjectStatus: function(selected) {
 			this.set('setProjectStatus', selected)
@@ -12,14 +14,16 @@ export default Component.extend({
 			this.set('setBA', selected)
 		},
 		submitProject(){
-			if (this.get('title')) {
-				this.get('store').createRecord("project", {
-					title: this.get('title'),
-					status: this.get('setProjectStatus'),
-					business_analyst: this.get('setBA')
-				});
-			}
-			this.set('title',"");
+			let project = this.get('newProject');
+			project.validate().then(({ validations }) => {
+				if (validations.get('isValid')){
+					console.log('isValid');
+					project.save();
+				}
+				else {
+					this.toggleProperty('invalidForm');
+				}
+			});
 		}
 	}
 });
