@@ -5,10 +5,11 @@ export default Ember.Component.extend({
     actions: {
         submitTodo() {
             if (this.get('title')) {
-                this.get('store').createRecord("todo", {
+                let createdRecord = this.get('store').createRecord("todo", {
                     title: this.get('title'),
                     complete: false
                 });
+                createRecord.save();
             }
             this.set('title', "");
         }

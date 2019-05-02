@@ -15,6 +15,7 @@ export default Component.extend({
 					this.toggleProperty("editing");
 				});
 			} else {
+				todo.save();
 				this.toggleProperty("editing");
 			}
 		},
