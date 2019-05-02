@@ -11,10 +11,11 @@ module.exports = function(environment) {
       authDomain: 'optimal-primer-144315.firebaseapp.com',
       databaseURL: 'https://optimal-primer-144315.firebaseio.com',
       storageBucket: 'optimal-primer-144315.appspot.com',
+      messagingSenderId: process.env.firebaseSenderId
     },
     torii: {
      sessionServiceName: 'session'
-    },
+   },
     /*
     contentSecurityPolicy: {
     'script-src': "'self' 'unsafe-eval' apis.google.com",
