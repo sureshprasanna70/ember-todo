@@ -6,8 +6,23 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
+    firebase: {
+      apiKey: process.env.firebaseApiKey,
+      authDomain: 'optimal-primer-144315.firebaseapp.com',
+      databaseURL: 'https://optimal-primer-144315.firebaseio.com',
+      storageBucket: 'optimal-primer-144315.appspot.com',
+    },
+    torii: {
+     sessionServiceName: 'session'
+    },
+    /*
+    contentSecurityPolicy: {
+    'script-src': "'self' 'unsafe-eval' apis.google.com",
+    'frame-src': "'self' https://*.firebaseapp.com",
+    'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+  },*/
+  EmberENV: {
+    FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       },
