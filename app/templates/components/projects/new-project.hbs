@@ -1,18 +1,20 @@
 {{yield}}
-{{input type="text" name="title" value=newProject.title placeholder="What needs to be done?" enter=(action "submitProject")}}
 <p style="color: red;font-size: 10px;">
-{{#if invalidForm}}
-{{v-get newProject 'title' 'message'}}
-{{/if}}
+	{{#if invalidForm}}
+	{{v-get newProject 'title' 'message'}}
+	{{v-get newProject 'business_analyst' 'message'}}
+	{{v-get newProject 'status' 'message'}}
+	{{/if}}
 </p>
+{{input type="text" name="title" value=newProject.title placeholder="What needs to be done?" enter=(action "submitProject")}}
 
-<select onchange={{action "setProjectStatus" value="target.value"}}>
+<select onchange={{action (mut newProject.status) value="target.value"}}>
 	<option disabled selected> -- Status -- </option>
 	<option value=1>Yet to start</option>
 	<option value=2>On-going</option>
 	<option value=3>Done</option>
 </select>
-<select onchange={{action "setBA" value="target.value"}}>
+<select onchange={{action (mut newProject.business_analyst) value="target.value"}}>
 	<option disabled selected> -- BA -- </option>
 	<option value="BA1">BA 1</option>
 	<option value="BA2">BA 2</option>
