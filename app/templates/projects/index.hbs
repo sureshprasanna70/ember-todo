@@ -10,7 +10,9 @@
 	<tr>
 		<td> {{project.title}} </td>
 		<td>{{project.business_analyst}}</td>
-		<td>{{project.status}}</td> 
+		<td>{{project.status}}</td>
+		<td> <button {{action "editProject"}} style="color:blue"> Edit </button></td>
+		<td> <button {{action "deleteProject"}} style="color:red"> Delete </button> </td>
 	</tr>
 	{{/each}}
 </table>
