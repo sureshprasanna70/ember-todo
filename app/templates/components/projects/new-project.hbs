@@ -6,7 +6,13 @@
 	{{v-get newProject 'status' 'message'}}
 	{{/if}}
 </p>
+{{#if edit}}
+{{input type="text" name="title" value=newProject.title placeholder="What needs to be done?" enter=(action "updateProject")}}
+
+{{else}}
 {{input type="text" name="title" value=newProject.title placeholder="What needs to be done?" enter=(action "submitProject")}}
+
+{{/if}}
 
 <select onchange={{action (mut newProject.status) value="target.value"}}>
 	<option disabled selected> -- Status -- </option>

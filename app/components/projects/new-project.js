@@ -11,13 +11,25 @@ export default Component.extend({
 			let project = this.get('newProject');
 			project.validate().then(({ validations }) => {
 				if (validations.get('isValid')){
-					console.log('isValid');
 					project.save();
 				}
 				else {
 					this.toggleProperty('invalidForm');
 				}
 			});
+		},
+		updateProject(){
+			let project = this.get('newProject');
+			project.validate().then(({ validations }) => {
+				if (validations.get('isValid')){
+					this.toggleProperty('edit');
+					project.save();
+				}
+				else {
+					this.toggleProperty('invalidForm');
+				}
+			});
+
 		}
 	}
 });
