@@ -16,6 +16,9 @@ Router.map(function() {
       this.route('done');
       this.route('tobe');
   });
+  this.route('teachers', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
