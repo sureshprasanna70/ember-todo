@@ -14,8 +14,15 @@ module.exports = function(environment) {
       messagingSenderId: process.env.firebaseSenderId
     },
     torii: {
-     sessionServiceName: 'session'
-   },
+     sessionServiceName: 'session',
+     providers: {
+      'github-oauth2': {
+        apiKey: '360474353e88c285990b',
+        scope: 'user',
+        redirectUri: 'http://localhost:4200/'
+      }
+    }
+  },
     /*
     contentSecurityPolicy: {
     'script-src': "'self' 'unsafe-eval' apis.google.com",
