@@ -7,7 +7,6 @@ export default Controller.extend({
 	actions:{
 		saveTeacher(){
 			let teacher = this.get('newTeacher');
-			debugger;
 			teacher.save();
 		}
 	}
