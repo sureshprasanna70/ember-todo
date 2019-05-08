@@ -17,6 +17,7 @@ Router.map(function() {
       this.route('tobe');
   });
   this.route('teachers', function() {
+    this.route('index');
     this.route('new');
   });
   this.route('login');
