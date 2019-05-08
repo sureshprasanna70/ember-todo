@@ -1,4 +1,7 @@
-{{outlet}}
-{{input type="text" value=newTeacher.name placeholder="Name of the teacher"}}
-{{input type="text" value=newTeacher.age placeholder="Age of the teacher"}}
+<p>
+<label> Name </label>{{input type="text" value=newTeacher.name placeholder="Name of the teacher"}}
+</p>
+<p>
+<label> Age </label> {{input type="text" value=newTeacher.age placeholder="Age of the teacher"}}
+</p>
 <button {{action "saveTeacher"}}> Save </button>
